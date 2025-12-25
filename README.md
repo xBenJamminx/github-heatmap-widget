@@ -93,7 +93,7 @@ function App() {
 ### Example Themes
 
 #### Emerald
-![#27272a](https://via.placeholder.com/12/27272a/27272a.png) ![#064e3b](https://via.placeholder.com/12/064e3b/064e3b.png) ![#047857](https://via.placeholder.com/12/047857/047857.png) ![#10b981](https://via.placeholder.com/12/10b981/10b981.png) ![#34d399](https://via.placeholder.com/12/34d399/34d399.png)
+![Emerald theme](./assets/theme-emerald.svg)
 ```tsx
 colorTheme={{
   0: 'rgba(39, 39, 42, 0.6)',
@@ -105,7 +105,7 @@ colorTheme={{
 ```
 
 #### GitHub Default
-![#161b22](https://via.placeholder.com/12/161b22/161b22.png) ![#0e4429](https://via.placeholder.com/12/0e4429/0e4429.png) ![#006d32](https://via.placeholder.com/12/006d32/006d32.png) ![#26a641](https://via.placeholder.com/12/26a641/26a641.png) ![#39d353](https://via.placeholder.com/12/39d353/39d353.png)
+![GitHub theme](./assets/theme-github.svg)
 ```tsx
 colorTheme={{
   0: '#161b22',
@@ -117,7 +117,7 @@ colorTheme={{
 ```
 
 #### Purple
-![#161b22](https://via.placeholder.com/12/161b22/161b22.png) ![#3b0764](https://via.placeholder.com/12/3b0764/3b0764.png) ![#7c3aed](https://via.placeholder.com/12/7c3aed/7c3aed.png) ![#a78bfa](https://via.placeholder.com/12/a78bfa/a78bfa.png) ![#c4b5fd](https://via.placeholder.com/12/c4b5fd/c4b5fd.png)
+![Purple theme](./assets/theme-purple.svg)
 ```tsx
 colorTheme={{
   0: '#161b22',
@@ -129,7 +129,7 @@ colorTheme={{
 ```
 
 #### Blue
-![#161b22](https://via.placeholder.com/12/161b22/161b22.png) ![#0c4a6e](https://via.placeholder.com/12/0c4a6e/0c4a6e.png) ![#0369a1](https://via.placeholder.com/12/0369a1/0369a1.png) ![#0ea5e9](https://via.placeholder.com/12/0ea5e9/0ea5e9.png) ![#7dd3fc](https://via.placeholder.com/12/7dd3fc/7dd3fc.png)
+![Blue theme](./assets/theme-blue.svg)
 ```tsx
 colorTheme={{
   0: '#161b22',
@@ -141,7 +141,7 @@ colorTheme={{
 ```
 
 #### Orange / Amber
-![#161b22](https://via.placeholder.com/12/161b22/161b22.png) ![#78350f](https://via.placeholder.com/12/78350f/78350f.png) ![#b45309](https://via.placeholder.com/12/b45309/b45309.png) ![#f59e0b](https://via.placeholder.com/12/f59e0b/f59e0b.png) ![#fcd34d](https://via.placeholder.com/12/fcd34d/fcd34d.png)
+![Orange theme](./assets/theme-orange.svg)
 ```tsx
 colorTheme={{
   0: '#161b22',
@@ -153,7 +153,7 @@ colorTheme={{
 ```
 
 #### Pink / Rose
-![#161b22](https://via.placeholder.com/12/161b22/161b22.png) ![#831843](https://via.placeholder.com/12/831843/831843.png) ![#db2777](https://via.placeholder.com/12/db2777/db2777.png) ![#f472b6](https://via.placeholder.com/12/f472b6/f472b6.png) ![#fbcfe8](https://via.placeholder.com/12/fbcfe8/fbcfe8.png)
+![Pink theme](./assets/theme-pink.svg)
 ```tsx
 colorTheme={{
   0: '#161b22',
