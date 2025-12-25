@@ -2,7 +2,9 @@
 
 A lightweight, customizable GitHub contribution heatmap widget for React. Perfect for portfolio sites, dashboards, and developer profiles.
 
-![GitHub Heatmap Widget](https://img.shields.io/npm/v/github-heatmap-widget)
+![Demo](./assets/demo.svg)
+
+[![npm version](https://img.shields.io/npm/v/github-heatmap-widget)](https://www.npmjs.com/package/github-heatmap-widget)
 
 ## Features
 
