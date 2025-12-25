@@ -1,6 +1,6 @@
 {
   "name": "github-heatmap-widget",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight, customizable GitHub contribution heatmap widget for React",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

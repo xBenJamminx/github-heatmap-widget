@@ -68,13 +68,55 @@ function App() {
 |------|------|---------|-------------|
 | `apiUrl` | `string` | **required** | Your API endpoint URL |
 | `username` | `string` | **required** | GitHub username |
-| `weeks` | `number` | `26` | Number of weeks to display (max: 53) |
+| `weeks` | `number` | `26` | Number of weeks to display (max: 53). Ignored if `startDate` is set. |
+| `startDate` | `string` | - | Start date for custom range (format: `YYYY-MM-DD`) |
+| `endDate` | `string` | today | End date for custom range (format: `YYYY-MM-DD`) |
 | `colorTheme` | `ColorTheme` | GitHub default | Custom color theme |
 | `cellSize` | `number` | `5` | Size of each cell in pixels |
 | `cellGap` | `number` | `1` | Gap between cells in pixels |
 | `showLoading` | `boolean` | `true` | Show loading spinner |
 | `linkToProfile` | `boolean` | `true` | Link to GitHub profile on click |
 | `className` | `string` | `''` | Custom class name |
+
+## Date Range Examples
+
+### Last 6 months (default)
+```tsx
+<GitHubHeatmap
+  apiUrl="/api/github-contributions"
+  username="xBenJamminx"
+  weeks={26}
+/>
+```
+
+### Custom date range
+```tsx
+<GitHubHeatmap
+  apiUrl="/api/github-contributions"
+  username="xBenJamminx"
+  startDate="2024-01-01"
+  endDate="2024-06-30"
+/>
+```
+
+### Year to date
+```tsx
+<GitHubHeatmap
+  apiUrl="/api/github-contributions"
+  username="xBenJamminx"
+  startDate="2024-01-01"
+  // endDate defaults to today
+/>
+```
+
+### Full year
+```tsx
+<GitHubHeatmap
+  apiUrl="/api/github-contributions"
+  username="xBenJamminx"
+  weeks={53}
+/>
+```
 
 ## Custom Color Themes
 

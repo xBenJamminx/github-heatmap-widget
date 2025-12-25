@@ -69,11 +69,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { username, weeks = '26' } = req.query;
+  const { username, weeks = '26', startDate, endDate } = req.query;
 
   if (!username || typeof username !== 'string') {
     return res.status(400).json({ error: 'Username is required' });
   }
+
+  // Parse date range if provided
+  const hasDateRange = startDate && typeof startDate === 'string';
+  const parsedStartDate = hasDateRange ? new Date(startDate as string) : null;
+  const parsedEndDate = endDate && typeof endDate === 'string' ? new Date(endDate as string) : new Date();
 
   const weeksToShow = Math.min(Math.max(parseInt(weeks as string, 10) || 26, 1), 53);
 
@@ -138,8 +143,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }))
     );
 
-    // Take last N weeks
-    const recentWeeks = allWeeks.slice(-weeksToShow);
+    let recentWeeks: ContributionDay[][];
+
+    if (hasDateRange && parsedStartDate) {
+      // Filter by date range
+      recentWeeks = allWeeks.map(week =>
+        week.filter(day => {
+          const dayDate = new Date(day.date);
+          return dayDate >= parsedStartDate && dayDate <= parsedEndDate;
+        })
+      ).filter(week => week.length > 0);
+    } else {
+      // Take last N weeks
+      recentWeeks = allWeeks.slice(-weeksToShow);
+    }
 
     // Calculate total for displayed period
     let total = 0;

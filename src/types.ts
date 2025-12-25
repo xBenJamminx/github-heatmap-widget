@@ -22,8 +22,12 @@ export interface GitHubHeatmapProps {
   apiUrl: string;
   /** GitHub username to fetch contributions for */
   username: string;
-  /** Number of weeks to display (default: 26, max: 53) */
+  /** Number of weeks to display (default: 26, max: 53). Ignored if startDate/endDate are provided. */
   weeks?: number;
+  /** Start date for contributions (format: "YYYY-MM-DD"). Use with endDate for custom date ranges. */
+  startDate?: string;
+  /** End date for contributions (format: "YYYY-MM-DD"). Defaults to today if startDate is provided without endDate. */
+  endDate?: string;
   /** Color theme for contribution levels */
   colorTheme?: ColorTheme;
   /** Size of each cell in pixels (default: 5) */

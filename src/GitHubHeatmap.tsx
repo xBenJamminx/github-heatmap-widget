@@ -13,6 +13,8 @@ export const GitHubHeatmap: React.FC<GitHubHeatmapProps> = ({
   apiUrl,
   username,
   weeks = 26,
+  startDate,
+  endDate,
   colorTheme = defaultColorTheme,
   cellSize = 5,
   cellGap = 1,
@@ -28,7 +30,16 @@ export const GitHubHeatmap: React.FC<GitHubHeatmapProps> = ({
   useEffect(() => {
     const fetchContributions = async () => {
       try {
-        const response = await fetch(`${apiUrl}?username=${username}&weeks=${weeks}`);
+        // Build query params - use date range if provided, otherwise use weeks
+        const params = new URLSearchParams({ username });
+        if (startDate) {
+          params.set('startDate', startDate);
+          params.set('endDate', endDate || new Date().toISOString().split('T')[0]);
+        } else {
+          params.set('weeks', String(weeks));
+        }
+
+        const response = await fetch(`${apiUrl}?${params.toString()}`);
 
         if (!response.ok) {
           throw new Error('Failed to fetch');
@@ -66,7 +77,7 @@ export const GitHubHeatmap: React.FC<GitHubHeatmapProps> = ({
     };
 
     fetchContributions();
-  }, [apiUrl, username, weeks]);
+  }, [apiUrl, username, weeks, startDate, endDate]);
 
   if (loading && showLoading) {
     return (
