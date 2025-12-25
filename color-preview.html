@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Heatmap Color Themes</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 40px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 40px;
+      color: #e4e4e7;
+    }
+    .theme {
+      margin-bottom: 50px;
+    }
+    .theme-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #a1a1aa;
+    }
+    .theme-name span {
+      color: #71717a;
+      font-weight: 400;
+    }
+    .heatmap {
+      display: flex;
+      gap: 3px;
+    }
+    .week {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .day {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: #71717a;
+    }
+    .legend-box {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .code {
+      margin-top: 16px;
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+      font-size: 12px;
+      color: #a1a1aa;
+      overflow-x: auto;
+    }
+    .code .key { color: #7dd3fc; }
+    .code .value { color: #34d399; }
+  </style>
+</head>
+<body>
+  <h1>GitHub Heatmap Color Themes</h1>
+
+  <div class="theme">
+    <div class="theme-name">EMERALD <span>(your current theme)</span></div>
+    <div class="heatmap" id="emerald"></div>
+    <div class="legend">
+      Less
+      <div class="legend-box" style="background: rgba(39, 39, 42, 0.6)"></div>
+      <div class="legend-box" style="background: rgba(6, 78, 59, 0.8)"></div>
+      <div class="legend-box" style="background: #047857"></div>
+      <div class="legend-box" style="background: #10b981"></div>
+      <div class="legend-box" style="background: #34d399"></div>
+      More
+    </div>
+    <div class="code">
+colorTheme={{<br>
+&nbsp;&nbsp;<span class="key">0</span>: <span class="value">'rgba(39, 39, 42, 0.6)'</span>,<br>
+&nbsp;&nbsp;<span class="key">1</span>: <span class="value">'rgba(6, 78, 59, 0.8)'</span>,<br>
+&nbsp;&nbsp;<span class="key">2</span>: <span class="value">'#047857'</span>,<br>
+&nbsp;&nbsp;<span class="key">3</span>: <span class="value">'#10b981'</span>,<br>
+&nbsp;&nbsp;<span class="key">4</span>: <span class="value">'#34d399'</span>,<br>
+}}
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-name">GITHUB DEFAULT <span>(classic green)</span></div>
+    <div class="heatmap" id="github"></div>
+    <div class="legend">
+      Less
+      <div class="legend-box" style="background: #161b22"></div>
+      <div class="legend-box" style="background: #0e4429"></div>
+      <div class="legend-box" style="background: #006d32"></div>
+      <div class="legend-box" style="background: #26a641"></div>
+      <div class="legend-box" style="background: #39d353"></div>
+      More
+    </div>
+    <div class="code">
+colorTheme={{<br>
+&nbsp;&nbsp;<span class="key">0</span>: <span class="value">'#161b22'</span>,<br>
+&nbsp;&nbsp;<span class="key">1</span>: <span class="value">'#0e4429'</span>,<br>
+&nbsp;&nbsp;<span class="key">2</span>: <span class="value">'#006d32'</span>,<br>
+&nbsp;&nbsp;<span class="key">3</span>: <span class="value">'#26a641'</span>,<br>
+&nbsp;&nbsp;<span class="key">4</span>: <span class="value">'#39d353'</span>,<br>
+}}
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-name">PURPLE</div>
+    <div class="heatmap" id="purple"></div>
+    <div class="legend">
+      Less
+      <div class="legend-box" style="background: #161b22"></div>
+      <div class="legend-box" style="background: #3b0764"></div>
+      <div class="legend-box" style="background: #7c3aed"></div>
+      <div class="legend-box" style="background: #a78bfa"></div>
+      <div class="legend-box" style="background: #c4b5fd"></div>
+      More
+    </div>
+    <div class="code">
+colorTheme={{<br>
+&nbsp;&nbsp;<span class="key">0</span>: <span class="value">'#161b22'</span>,<br>
+&nbsp;&nbsp;<span class="key">1</span>: <span class="value">'#3b0764'</span>,<br>
+&nbsp;&nbsp;<span class="key">2</span>: <span class="value">'#7c3aed'</span>,<br>
+&nbsp;&nbsp;<span class="key">3</span>: <span class="value">'#a78bfa'</span>,<br>
+&nbsp;&nbsp;<span class="key">4</span>: <span class="value">'#c4b5fd'</span>,<br>
+}}
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-name">BLUE</div>
+    <div class="heatmap" id="blue"></div>
+    <div class="legend">
+      Less
+      <div class="legend-box" style="background: #161b22"></div>
+      <div class="legend-box" style="background: #0c4a6e"></div>
+      <div class="legend-box" style="background: #0369a1"></div>
+      <div class="legend-box" style="background: #0ea5e9"></div>
+      <div class="legend-box" style="background: #7dd3fc"></div>
+      More
+    </div>
+    <div class="code">
+colorTheme={{<br>
+&nbsp;&nbsp;<span class="key">0</span>: <span class="value">'#161b22'</span>,<br>
+&nbsp;&nbsp;<span class="key">1</span>: <span class="value">'#0c4a6e'</span>,<br>
+&nbsp;&nbsp;<span class="key">2</span>: <span class="value">'#0369a1'</span>,<br>
+&nbsp;&nbsp;<span class="key">3</span>: <span class="value">'#0ea5e9'</span>,<br>
+&nbsp;&nbsp;<span class="key">4</span>: <span class="value">'#7dd3fc'</span>,<br>
+}}
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-name">ORANGE / AMBER</div>
+    <div class="heatmap" id="orange"></div>
+    <div class="legend">
+      Less
+      <div class="legend-box" style="background: #161b22"></div>
+      <div class="legend-box" style="background: #78350f"></div>
+      <div class="legend-box" style="background: #b45309"></div>
+      <div class="legend-box" style="background: #f59e0b"></div>
+      <div class="legend-box" style="background: #fcd34d"></div>
+      More
+    </div>
+    <div class="code">
+colorTheme={{<br>
+&nbsp;&nbsp;<span class="key">0</span>: <span class="value">'#161b22'</span>,<br>
+&nbsp;&nbsp;<span class="key">1</span>: <span class="value">'#78350f'</span>,<br>
+&nbsp;&nbsp;<span class="key">2</span>: <span class="value">'#b45309'</span>,<br>
+&nbsp;&nbsp;<span class="key">3</span>: <span class="value">'#f59e0b'</span>,<br>
+&nbsp;&nbsp;<span class="key">4</span>: <span class="value">'#fcd34d'</span>,<br>
+}}
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-name">PINK / ROSE</div>
+    <div class="heatmap" id="pink"></div>
+    <div class="legend">
+      Less
+      <div class="legend-box" style="background: #161b22"></div>
+      <div class="legend-box" style="background: #831843"></div>
+      <div class="legend-box" style="background: #db2777"></div>
+      <div class="legend-box" style="background: #f472b6"></div>
+      <div class="legend-box" style="background: #fbcfe8"></div>
+      More
+    </div>
+    <div class="code">
+colorTheme={{<br>
+&nbsp;&nbsp;<span class="key">0</span>: <span class="value">'#161b22'</span>,<br>
+&nbsp;&nbsp;<span class="key">1</span>: <span class="value">'#831843'</span>,<br>
+&nbsp;&nbsp;<span class="key">2</span>: <span class="value">'#db2777'</span>,<br>
+&nbsp;&nbsp;<span class="key">3</span>: <span class="value">'#f472b6'</span>,<br>
+&nbsp;&nbsp;<span class="key">4</span>: <span class="value">'#fbcfe8'</span>,<br>
+}}
+    </div>
+  </div>
+
+  <script>
+    const themes = {
+      emerald: ['rgba(39, 39, 42, 0.6)', 'rgba(6, 78, 59, 0.8)', '#047857', '#10b981', '#34d399'],
+      github: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+      purple: ['#161b22', '#3b0764', '#7c3aed', '#a78bfa', '#c4b5fd'],
+      blue: ['#161b22', '#0c4a6e', '#0369a1', '#0ea5e9', '#7dd3fc'],
+      orange: ['#161b22', '#78350f', '#b45309', '#f59e0b', '#fcd34d'],
+      pink: ['#161b22', '#831843', '#db2777', '#f472b6', '#fbcfe8'],
+    };
+
+    // Generate fake contribution data (26 weeks x 7 days)
+    function generateHeatmap(containerId, colors) {
+      const container = document.getElementById(containerId);
+      for (let w = 0; w < 26; w++) {
+        const week = document.createElement('div');
+        week.className = 'week';
+        for (let d = 0; d < 7; d++) {
+          const day = document.createElement('div');
+          day.className = 'day';
+          // Weighted random to make it look realistic
+          const rand = Math.random();
+          let level;
+          if (rand < 0.35) level = 0;
+          else if (rand < 0.55) level = 1;
+          else if (rand < 0.75) level = 2;
+          else if (rand < 0.90) level = 3;
+          else level = 4;
+          day.style.background = colors[level];
+          week.appendChild(day);
+        }
+        container.appendChild(week);
+      }
+    }
+
+    Object.keys(themes).forEach(theme => generateHeatmap(theme, themes[theme]));
+  </script>
+</body>
+</html>
