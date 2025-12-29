@@ -258,6 +258,32 @@ The component fetches data from your API endpoint. For local development:
 1. Use `vercel dev` (if using Vercel) to run API routes locally
 2. Or point `apiUrl` to your production API during development
 
+## Troubleshooting
+
+### 401 Unauthorized Error
+
+If you're getting 401 errors, your token may be expired or invalid:
+
+1. **Check if token is expired** - Classic tokens can be set to expire. Generate a new one with "No expiration" for uninterrupted service.
+
+2. **Verify token type** - Must be a **Classic** PAT, not fine-grained. Classic tokens start with `ghp_`.
+
+3. **Confirm required scopes** - Token needs `read:user` scope (and `repo` for private contributions).
+
+4. **Test your token:**
+   ```bash
+   curl -H "Authorization: Bearer YOUR_TOKEN" https://api.github.com/user
+   ```
+   Should return your user profile. If you get 401, the token is invalid.
+
+5. **Update your environment variable** - After generating a new token, update it in your hosting platform and restart your server.
+
+### No Contribution Data Showing
+
+- Fine-grained tokens don't return contribution data - switch to Classic token
+- Ensure the username exists and has public activity
+- Check your browser's network tab for API errors
+
 ## License
 
 MIT © Ben Jammin
