@@ -5,6 +5,7 @@ A lightweight, customizable GitHub contribution heatmap widget for React. Perfec
 ![Demo](./assets/demo.svg)
 
 [![npm version](https://img.shields.io/npm/v/github-heatmap-widget)](https://www.npmjs.com/package/github-heatmap-widget)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Me-ff5e5b?logo=ko-fi)](https://ko-fi.com/xBenJamminx)
 
 ## Features
 
