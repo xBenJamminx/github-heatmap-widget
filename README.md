@@ -284,6 +284,16 @@ If you're getting 401 errors, your token may be expired or invalid:
 - Ensure the username exists and has public activity
 - Check your browser's network tab for API errors
 
+## AI Assistant Integration
+
+This package includes a `CLAUDE.md` file with detailed instructions for AI coding assistants (Claude, GPT, Copilot, etc.). When you ask an AI to integrate this package into your project, it can read these instructions to provide accurate, copy-paste ready code.
+
+The AI instructions cover:
+- Complete setup with API endpoint code
+- GitHub token configuration
+- Custom color themes
+- Common use cases and patterns
+
 ## License
 
 MIT © Ben Jammin
